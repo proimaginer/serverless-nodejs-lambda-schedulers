@@ -1,0 +1,14 @@
+# 포스트 어제 작성된 포스트 표시 스케줄러
+PostsSetIsYesterday:
+  handler: src/posts/setIsYesterday/index.handler
+  description: Scheduling for PostsSetIsYesterday
+  package:
+    patterns:
+      - 'src/posts/setIsYesterday/**'
+  events:
+    - schedule:
+        rate: cron(0 15 * * ? *) # UTC 기준 15시 > KST 기준 00시, 매일
+        enabled: true
+  layers:
+    - ${env:AWS_LAMBDA_LAYER}
+    
