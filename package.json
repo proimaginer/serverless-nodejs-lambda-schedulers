@@ -1,7 +1,7 @@
 {
-  "name": "lambda-apis",
+  "name": "lambda-schedulers",
   "version": "1.0.0",
-  "description": "apis",
+  "description": "schedulers",
   "dependencies": {
     "aws-sdk": "^2.1237.0",
     "fs": "^0.0.1-security",
@@ -21,7 +21,6 @@
   },
   "scripts": {
     "update": "npm cache clean --force && rm -rf ./node_modules && rm -rf ./package-lock.json && npm install --save",
-    "offline": "sls offline --stage dev",
     "deploy:dev": "sls deploy --stage dev",
     "deploy:stg": "sls deploy --stage stg",
     "deploy:prd": "sls deploy --stage prd"

@@ -1,4 +1,4 @@
-service: lambda-apis
+service: lambda-schedulers
 
 # https://www.serverless.com/framework/docs/deprecations/#NEW_VARIABLES_RESOLVER
 useDotenv: true
@@ -41,27 +41,6 @@ provider:
     name: serverless-nodejs-deploy-source
     serverSideEncryption: AES256
   deploymentPrefix: serverless
-
-resources:
-  Resources:
-    GatewayResponseDefault4XX:
-      Type: "AWS::ApiGateway::GatewayResponse"
-      Properties:
-        ResponseParameters:
-          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
-          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
-        ResponseType: DEFAULT_4XX
-        RestApiId:
-          Ref: "ApiGatewayRestApi"
-    GatewayResponseDefault5XX:
-      Type: "AWS::ApiGateway::GatewayResponse"
-      Properties:
-        ResponseParameters:
-          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
-          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
-        ResponseType: DEFAULT_5XX
-        RestApiId:
-          Ref: "ApiGatewayRestApi"
 
 functions: ${file(./src/functions.yml)}
 

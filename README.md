@@ -6,12 +6,6 @@
 npm run update
 ```
 
-## 로컬 실행 방법
-
-```
-npm run offline
-```
-
 ## 배포 방법
 
 ```
@@ -30,13 +24,16 @@ npm run deploy:dev
     포스트 관련 schedulers
 
   - /functions.yml  
-    프록시 Lambda Functions 설정 yml
+    schedulers Lambda Functions 설정 yml
 
-- .eslintrc  
+- .eslintrc.js  
   eslint 설정 파일
 
 - .gitignore  
   git에 저장하지 않을 파일 및 폴더 구조 설정 파일
+
+- .prettierrc.js  
+  prettier 설정 파일
 
 - package.json  
   package 파일
